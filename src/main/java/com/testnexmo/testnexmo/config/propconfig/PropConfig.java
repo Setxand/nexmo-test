@@ -20,6 +20,12 @@ public class PropConfig {
         private String  url;
         private String key;
         private String secret;
+
+
+        @Bean
+        public NexmoProperties nexmoProperties(){
+            return new NexmoProperties();
+        }
     }
 
     @Bean

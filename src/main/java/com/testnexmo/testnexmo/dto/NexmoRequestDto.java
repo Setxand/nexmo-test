@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class NexmoRequest {
+public class NexmoRequestDto {
     @JsonProperty("api_key")
     private String key;
     @JsonProperty("api_secret")
@@ -17,7 +17,7 @@ public class NexmoRequest {
     private String from;
     private String text;
 
-    public NexmoRequest(String key, String secret) {
+    public NexmoRequestDto(String key, String secret) {
         this.key = key;
         this.secret = secret;
     }
