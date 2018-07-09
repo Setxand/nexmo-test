@@ -1,8 +1,7 @@
-package com.testnexmo.testnexmo.config.propconfig;
+package com.testnexmo.config.propconfig;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
 @NoArgsConstructor

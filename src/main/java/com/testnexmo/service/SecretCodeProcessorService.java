@@ -1,8 +1,8 @@
-package com.testnexmo.testnexmo.service;
+package com.testnexmo.service;
 
-import com.testnexmo.testnexmo.dto.UserDto;
-import com.testnexmo.testnexmo.model.User;
-import com.testnexmo.testnexmo.repo.UserRepo;
+import com.testnexmo.dto.UserDTO;
+import com.testnexmo.model.User;
+import com.testnexmo.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,16 +17,20 @@ public class SecretCodeProcessorService {
     SenderService senderService;
     @Autowired
     UserRepo userRepo;
+
+
     @Transactional
     public void processSecretCode(String phone) {
         User user = userRepo.findByPhoneNumber(phone);
-        user.setSecretCode(new Random().nextInt(9999)+1);
-        senderService.sendValidationMessage(phone,user.getSecretCode());
+        user.setSecretCode(new Random().nextInt(9999) + 1);
+        senderService.sendValidationMessage(user);
     }
+
     @Transactional
-    public ResponseEntity validateCode(UserDto userDto) {
-        User user = userRepo.findByPhoneNumber(userDto.getPhoneNumber());
-        if(user.getSecretCode().equals(userDto.getSecretCode())) {
+    public ResponseEntity validateCode(UserDTO userDTO) {
+        User user = userRepo.findByPhoneNumber(userDTO.getPhoneNumber());
+
+        if (user.getSecretCode().equals(userDTO.getSecretCode())) {
             user.setSecretCode(null);
             return ResponseEntity.status(HttpStatus.OK).build();
         }

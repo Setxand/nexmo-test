@@ -1,4 +1,4 @@
-package com.testnexmo.testnexmo.model;
+package com.testnexmo.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

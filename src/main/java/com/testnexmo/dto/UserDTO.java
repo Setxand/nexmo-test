@@ -1,4 +1,4 @@
-package com.testnexmo.testnexmo.dto;
+package com.testnexmo.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class UserDto {
+public class UserDTO {
     private String name;
     @JsonProperty("phone_number")
     private String phoneNumber;
