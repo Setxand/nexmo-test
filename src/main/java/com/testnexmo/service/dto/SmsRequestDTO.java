@@ -16,21 +16,9 @@ public class SmsRequestDTO {
     private String to;
     private String from;
     private String text;
-    private String body;
-    @JsonProperty("auth_token")
-    private String authToken;
-    public SmsRequestDTO(String key, String secret, String to, String from, String text) {
+
+    public SmsRequestDTO(String key, String secret) {
         this.key = key;
         this.secret = secret;
-        this.to = to;
-        this.from = from;
-        this.text = text;
     }
-
-    public SmsRequestDTO(String to, String body, String from) {
-        this.to = to;
-        this.body = body;
-        this.from = from;
-    }
-
 }

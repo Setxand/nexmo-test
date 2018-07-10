@@ -3,6 +3,7 @@ package com.testnexmo.service;
 import com.testnexmo.dto.UserDTO;
 import com.testnexmo.model.User;
 import com.testnexmo.repo.UserRepo;
+import com.testnexmo.service.api.SenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +15,9 @@ import java.util.Random;
 @Service
 public class SecretCodeProcessorService {
     @Autowired
-    SenderService senderService;
+    private SenderService senderService;
     @Autowired
-    UserRepo userRepo;
+    private UserRepo userRepo;
 
 
     @Transactional

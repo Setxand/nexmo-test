@@ -11,8 +11,4 @@ public class NexmoClient {
     public NexmoClient(PropConfig.NexmoProperties nexmoProperties) {
         this.nexmoProperties = nexmoProperties;
     }
-
-    public PropConfig.NexmoProperties getNexmoProperties() {
-        return nexmoProperties;
-    }
 }

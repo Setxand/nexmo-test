@@ -12,24 +12,23 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties
 public class PropConfig {
 
+    @Bean
+    public NexmoClient nexmoClient(NexmoProperties nexmoProperties) {
+        return new NexmoClient(nexmoProperties);
+    }
+
     @Getter
     @Setter
     @NoArgsConstructor
     @ConfigurationProperties(prefix = "nexmo")
-    public class NexmoProperties{
-        private String  url;
+    public class NexmoProperties {
+        private String url;
         private String key;
         private String secret;
 
-
         @Bean
-        public NexmoProperties nexmoProperties(){
+        public NexmoProperties nexmoProperties() {
             return new NexmoProperties();
         }
-    }
-
-    @Bean
-    public NexmoClient nexmoClient(NexmoProperties nexmoProperties){
-        return new NexmoClient(nexmoProperties);
     }
 }
